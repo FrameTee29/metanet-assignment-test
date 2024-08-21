@@ -9,7 +9,7 @@
 
 # Service 2 : Paytanet frontend
 (
-    cd paytanet-frontend && cp .env.example .env && npm install
+    cd paytanet-frontend && cp .env.example .env.development.local && npm install
 )
 
 # Service 3 : Metify Shop service
@@ -19,5 +19,5 @@
 
 # Service 4 : Metify Shop frontend
 (
-    cd metify-shop-frontend && cp .env.example .env && npm install
+    cd metify-shop-frontend && cp .env.example .env.development.local && npm install
 )
