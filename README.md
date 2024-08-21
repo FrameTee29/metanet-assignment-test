@@ -63,7 +63,7 @@ To set up the initial development environment, follow these steps:
 ### Paytanet service (Service A)
 
 ```bash
-cd paytanet-serivce
+cd paytanet-service
 npm run start:dev
 ```
 
@@ -88,7 +88,7 @@ Click to open the Paytanet 📚[http://localhost:3001](http://localhost:3001)
 
 ### Metify shop service (Service B)
 ```bash
-cd metify-shop-serivce
+cd metify-shop-service
 npm run start:dev
 ```
 
