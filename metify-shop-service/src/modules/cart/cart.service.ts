@@ -36,8 +36,6 @@ export class CartService {
 
     const foundCart = await this.cartRepository.findOneByUserId(userId);
 
-    console.log('foundCart', foundCart);
-
     await this.entityManage.transaction(async (txManager) => {
       let myCart = foundCart;
 
