@@ -112,3 +112,15 @@ npm run dev
 Click to open the Metify Shop 📚[http://localhost:3002](http://localhost:3002)
 
 ---
+
+## ER-Diagram
+
+### Service A
+<a href="https://github.com/FrameTee29/metanet-assignment-test/blob/main/assets/er-diagram/service-a.png" target="_blank">
+  <img src="https://github.com/FrameTee29/metanet-assignment-test/blob/main/assets/er-diagram/service-a.png">
+</a>
+
+### Service B
+<a href="https://github.com/FrameTee29/metanet-assignment-test/blob/main/assets/er-diagram/service-b.png" target="_blank">
+  <img src="https://github.com/FrameTee29/metanet-assignment-test/blob/main/assets/er-diagram/service-b.png">
+</a>
