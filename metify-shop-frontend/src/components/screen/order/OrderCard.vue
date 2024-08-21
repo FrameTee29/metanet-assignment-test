@@ -1,20 +1,33 @@
 <script setup lang="ts">
-import Separator from '@/components/ui/separator/Separator.vue'
-import type { Order } from '@/interfaces/order.interface'
-import { formatBalance } from '@/utils/format-balance'
+import { formatBalance } from "@/utils/format-balance";
+import { formatDateTime } from "@/utils/format-date";
+
+import Separator from "@/components/ui/separator/Separator.vue";
+
+import type { Order } from "@/interfaces/order.interface";
 
 interface OrderCardProps {
-  order: Order
+  order: Order;
 }
 
-defineProps<OrderCardProps>()
+defineProps<OrderCardProps>();
 </script>
 
 <template>
   <div class="bg-white p-4 w-full">
-    <div class="space-x-4 flex items-center">
-      <div class="text-xs bg-orange-500 px-2 py-1 rounded-md text-white">Suggest</div>
-      <span>BigC</span>
+    <div class="flex justify-between items-center">
+      <div class="space-x-4 flex items-center">
+        <div class="text-xs bg-orange-500 px-2 py-1 rounded-md text-white">Suggest</div>
+        <span>BigC</span>
+      </div>
+      <div class="text-xs flex flex-col items-end text-gray-500">
+        <div>
+          {{ formatDateTime(order.createdAt, "YYYY/MM/DD ") }}
+        </div>
+        <div>
+          {{ formatDateTime(order.createdAt, "HH:mm:ss") }}
+        </div>
+      </div>
     </div>
 
     <Separator class="my-4" />
@@ -25,11 +38,13 @@ defineProps<OrderCardProps>()
         class="border-b pb-4 flex justify-between items-start"
       >
         <div class="flex space-x-2">
-          <div class="w-24 h-24 border rounded-md">
+          <div class="flex justify-center items-center w-24 h-24 border rounded-md">
             <img :src="orderItem.product.imageUrl" />
           </div>
           <div class="py-2">
-            <div class="text-sm line-clamp-1 text-gray-500">{{ orderItem.product.name }}</div>
+            <div class="text-sm line-clamp-1 text-gray-500">
+              {{ orderItem.product.name }}
+            </div>
             <div>
               <span>x</span><span>{{ orderItem.quantity }}</span>
             </div>
