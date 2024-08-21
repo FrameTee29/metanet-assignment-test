@@ -22,10 +22,7 @@ defineProps<OrderCardProps>();
       </div>
       <div class="text-xs flex flex-col items-end text-gray-500">
         <div>
-          {{ formatDateTime(order.createdAt, "YYYY/MM/DD ") }}
-        </div>
-        <div>
-          {{ formatDateTime(order.createdAt, "HH:mm:ss") }}
+          {{ formatDateTime(order.createdAt, "YYYY/MM/DD HH:mm ") }}
         </div>
       </div>
     </div>
