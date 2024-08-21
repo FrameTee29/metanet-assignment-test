@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis-container
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+    networks:
+      - metanet
+    restart: unless-stopped
+
+volumes:
+  redis:
+
+networks:
+  metanet:
+    name: metanet
+    driver: bridge
+    external: true
