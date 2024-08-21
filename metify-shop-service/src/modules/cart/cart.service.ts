@@ -1,6 +1,6 @@
+import { EntityManager } from 'typeorm';
+import { InjectEntityManager } from '@nestjs/typeorm';
 import { BadRequestException, Injectable } from '@nestjs/common';
-
-import { Cart } from '@/models/cart/entities/cart.entity';
 
 import { CartRepository } from '@/models/cart/repositories/cart.repository';
 import { CartItemsRepository } from '@/models/cart/repositories/cart-items.repository';
@@ -9,8 +9,6 @@ import { JwtUserInfo } from '@/interfaces/auth.interface';
 
 import { AddProductToCartDto } from '@/modules/cart/dto/add-product-to-cart.dto';
 import { EditProductToCartDto } from '@/modules/cart/dto/edit-product-to-cart.dto';
-import { EntityManager } from 'typeorm';
-import { InjectEntityManager } from '@nestjs/typeorm';
 
 @Injectable()
 export class CartService {
@@ -38,9 +36,11 @@ export class CartService {
 
     const foundCart = await this.cartRepository.findOneByUserId(userId);
 
-    let myCart: Cart = foundCart;
+    console.log('foundCart', foundCart);
 
     await this.entityManage.transaction(async (txManager) => {
+      let myCart = foundCart;
+
       if (!foundCart) {
         const mewCart = this.cartRepository.create({ userId });
 
@@ -50,7 +50,7 @@ export class CartService {
         );
       }
 
-      const existingCartItem = await foundCart.cartItems.find(
+      const existingCartItem = await foundCart?.cartItems.find(
         (cartItem) => cartItem.product.id === productId,
       );
 
@@ -63,7 +63,9 @@ export class CartService {
       }
 
       const newItemInCart = this.cartItemsRepository.create({
-        cart: myCart,
+        cart: {
+          id: myCart.id,
+        },
         product: { id: productId },
         quantity,
       });
