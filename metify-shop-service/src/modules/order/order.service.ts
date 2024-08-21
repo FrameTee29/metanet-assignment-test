@@ -14,6 +14,9 @@ export class OrderService {
         userId: jwtUserInfo.id,
       },
       relations: ['orderItems', 'orderItems.product'],
+      order: {
+        createdAt: 'DESC',
+      },
     });
   }
 }
