@@ -21,7 +21,7 @@ export class CurrencyService implements OnModuleInit {
 
   onModuleInit() {
     this.getExchangeRateToday();
-    this.getAllCurrencies();
+    this.getAllCurrenciesToday();
   }
 
   @Cron('0 */6 * * *')
