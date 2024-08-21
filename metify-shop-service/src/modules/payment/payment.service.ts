@@ -42,7 +42,7 @@ export class PaymentService {
 
       this.paytanetGateway.setAccessToken(accessToken);
       await this.paytanetGateway.withdraw({
-        amount: Number(totalPrice.toFixed(2)),
+        amount: Number(payDto.totalPrice.toFixed(2)),
         currencyCode: payDto.currencyCode,
         note: 'Payment for order (Metify Shop)',
       });
