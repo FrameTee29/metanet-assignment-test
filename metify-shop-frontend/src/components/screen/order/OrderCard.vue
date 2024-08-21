@@ -14,7 +14,7 @@ defineProps<OrderCardProps>()
   <div class="bg-white p-4 w-full">
     <div class="space-x-4 flex items-center">
       <div class="text-xs bg-orange-500 px-2 py-1 rounded-md text-white">Suggest</div>
-      <span>BigC Official</span>
+      <span>BigC</span>
     </div>
 
     <Separator class="my-4" />
