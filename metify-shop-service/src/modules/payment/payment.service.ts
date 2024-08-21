@@ -42,7 +42,7 @@ export class PaymentService {
 
       this.paytanetGateway.setAccessToken(accessToken);
       await this.paytanetGateway.withdraw({
-        amount: Number(payDto.totalPrice.toFixed(2)),
+        amount: Number(totalPrice.toFixed(2)),
         currencyCode: payDto.currencyCode,
         note: 'Payment for order (Metify Shop)',
       });
@@ -92,7 +92,7 @@ export class PaymentService {
 
     for (const cartItem of cart.cartItems) {
       const priceAtTime = Number(cartItem.product.price) / Number(priceRate);
-      totalPrice += priceAtTime;
+      totalPrice += priceAtTime * cartItem.quantity;
       const orderItemData = this.orderItemsRepository.create({
         product: {
           id: cartItem.product.id,
