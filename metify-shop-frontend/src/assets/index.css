@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #030712;
+
+    --card: #ffffff;
+    --card-foreground: #030712;
+
+    --popover: #ffffff;
+    --popover-foreground: #030712;
+
+    --primary: #45b35f;
+    --primary-foreground: #f9fafb;
+
+    --secondary: #f3f4f6;
+    --secondary-foreground: #111827;
+
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+
+    --accent: #f3f4f6;
+    --accent-foreground: #111827;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #f9fafb;
+
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #45b35f;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #030712;
+    --foreground: #f9fafb;
+
+    --card: #030712;
+    --card-foreground: #f9fafb;
+
+    --popover: #030712;
+    --popover-foreground: #f9fafb;
+
+    --primary: #45b35f;
+    --primary-foreground: #f9fafb;
+
+    --secondary: #1f2937;
+    --secondary-foreground: #f9fafb;
+
+    --muted: #1f2937;
+    --muted-foreground: #a5a5a6;
+
+    --accent: #1f2937;
+    --accent-foreground: #f9fafb;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #f9fafb;
+
+    --border: #1f2937;
+    --input: #1f2937;
+    --ring: #45b35f;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Poppins', sans-serif;
+    font-optical-sizing: auto;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.swal2-html-container {
+  font-size: 14px !important;
+}
